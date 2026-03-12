@@ -18,7 +18,7 @@ const Navbar = () => {
       <div className="container flex items-center justify-between h-16 px-4 md:px-6">
         <a href="#" className="flex items-center gap-2">
           <img src={logo} alt="Finmonie" className="h-8 w-8" />
-          <span className="font-display text-primary text-2xl font-light">Finmonie</span>
+          <span className="font-display text-primary text-2xl font-extrabold">Finmonie</span>
         </a>
 
         <div className="hidden md:flex items-center gap-8">
