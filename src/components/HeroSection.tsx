@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import heroMockup from "@/assets/hero-mockup.png";
+import heroImage from "@/assets/hero-image.png";
 
 const HeroSection = () => {
   return (
@@ -60,11 +60,11 @@ const HeroSection = () => {
             className="flex justify-center">
             
             <div className="relative">
-              <div className="absolute inset-0 bg-primary/20 rounded-3xl blur-3xl scale-75" />
+              <div className="absolute inset-0 bg-primary/20 rounded-3xl blur-3xl scale-90" />
               <img
-                src={heroMockup}
-                alt="Finmonie app dashboard"
-                className="relative w-80 md:w-96 animate-float" />
+                src={heroImage}
+                alt="Young woman using Finmonie app with financial icons"
+                className="relative w-full max-w-lg rounded-2xl shadow-2xl" />
               
             </div>
           </motion.div>
