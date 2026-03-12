@@ -15,12 +15,12 @@ const HeroSection = () => {
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7 }}
-          >
-            <div className="inline-flex items-center gap-2 bg-accent rounded-full px-4 py-1.5 mb-6">
-              <span className="w-2 h-2 rounded-full bg-primary animate-pulse" />
-              <span className="text-xs font-medium text-accent-foreground">Coming Soon — Join the Waitlist</span>
-            </div>
+            transition={{ duration: 0.7 }}>
+            
+            
+
+
+            
 
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight tracking-tight mb-6">
               Your money.{" "}
@@ -57,21 +57,21 @@ const HeroSection = () => {
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="flex justify-center"
-          >
+            className="flex justify-center">
+            
             <div className="relative">
               <div className="absolute inset-0 bg-primary/20 rounded-3xl blur-3xl scale-75" />
               <img
                 src={heroMockup}
                 alt="Finmonie app dashboard"
-                className="relative w-80 md:w-96 animate-float"
-              />
+                className="relative w-80 md:w-96 animate-float" />
+              
             </div>
           </motion.div>
         </div>
       </div>
-    </section>
-  );
+    </section>);
+
 };
 
 export default HeroSection;
