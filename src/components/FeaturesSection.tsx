@@ -1,5 +1,7 @@
+import { useState } from "react";
 import { motion } from "framer-motion";
-import { Wallet, Globe, Shield, TrendingUp, Users, Lightbulb } from "lucide-react";
+import { Wallet, Globe, Shield, TrendingUp, Users, Lightbulb, BrainCircuit, HeartPlus, ShieldUser } from "lucide-react";
+import { BorderBeam } from "@/components/ui/border-beam";
 
 const features = [
   {
@@ -9,8 +11,8 @@ const features = [
   },
   {
     icon: Globe,
-    title: "Foreign Transactions",
-    description: "Send, receive and convert currencies with transparent rates — no hidden fees.",
+    title: "Transactions",
+    description: "Send and receive money, pay bills and make online payments — no hidden fees.",
   },
   {
     icon: TrendingUp,
@@ -32,6 +34,21 @@ const features = [
     title: "Financial Advisory",
     description: "Wealth management, planning, and accounting advice tailored to your goals.",
   },
+  {
+    icon: HeartPlus,
+    title: "Health Insurance",
+    description: "Comprehensive health coverage tailored to your needs.",
+  },
+  {
+    icon: ShieldUser,
+    title: "Pension Plans",
+    description: "Secure your future with our flexible pension options.",
+  },
+  {
+    icon: BrainCircuit,
+    title: "AI Support",
+    description: "24/7 AI-powered financial assistant to answer your questions and provide personalized advice.",
+  },
 ];
 
 const container = {
@@ -45,6 +62,7 @@ const item = {
 };
 
 const FeaturesSection = () => {
+  const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
   return (
     <section id="features" className="py-20 md:py-32">
       <div className="container px-4 md:px-6">
@@ -65,12 +83,17 @@ const FeaturesSection = () => {
           viewport={{ once: true, amount: 0.2 }}
           className="grid md:grid-cols-2 lg:grid-cols-3 gap-6"
         >
-          {features.map((f) => (
+          {features.map((f, idx) => (
             <motion.div
               key={f.title}
               variants={item}
-              className="group relative bg-card rounded-2xl p-6 border border-border hover:border-primary/30 transition-all duration-300 shadow-card hover:shadow-glow/30"
+              onHoverStart={() => setHoveredIndex(idx)}
+              onHoverEnd={() => setHoveredIndex(null)}
+              className="group relative bg-card rounded-2xl p-6 border border-border transition-all duration-300 shadow-card hover:shadow-glow/30"
             >
+              {hoveredIndex === idx && (
+                <BorderBeam size={350} duration={5} delay={5} colorFrom="#ebeff5" colorTo="#cf8ff2" />
+              )}
               <div className="w-12 h-12 rounded-xl bg-accent flex items-center justify-center mb-4 group-hover:bg-primary/10 transition-colors">
                 <f.icon size={24} className="text-primary" />
               </div>

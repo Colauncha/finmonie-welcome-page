@@ -1,9 +1,13 @@
+import { useState } from "react";
 import { motion } from "framer-motion";
 import { Quote } from "lucide-react";
+import { BorderBeam } from "@/components/ui/border-beam";
 
 const CommunitySection = () => {
+  const [hovered, setHovered] = useState(false);
+
   return (
-    <section id="community" className="py-20 md:py-32">
+    <section id="community" className="py-20 md:py-32" onMouseEnter={() => setHovered(true)} onMouseLeave={() => setHovered(false)}>
       <div className="container px-4 md:px-6">
         <div className="max-w-3xl mx-auto text-center">
           <h2 className="text-3xl md:text-4xl font-bold mb-12">
@@ -26,6 +30,9 @@ const CommunitySection = () => {
               <p className="font-display font-semibold text-foreground">Jennifer</p>
               <p className="text-sm text-muted-foreground">Corp member, Lagos</p>
             </div>
+            {hovered && (
+              <BorderBeam size={350} duration={5} delay={5} colorFrom="#ebeff5" colorTo="#cf8ff2" />
+            )}
           </motion.div>
         </div>
       </div>

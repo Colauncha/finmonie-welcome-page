@@ -1,33 +1,39 @@
 import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { DottedSurface } from "@/components/ui/dotted-surface";
 
 const CTASection = () => {
   return (
-    <section className="py-20 md:py-32">
+    <section className="py-20 md:py-32 bg-secondary/50">
       <div className="container px-4 md:px-6">
         <motion.div
           initial={{ opacity: 0, scale: 0.95 }}
           whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="relative overflow-hidden rounded-3xl bg-gradient-hero p-10 md:p-16 text-center"
+          className="relative overflow-hidden rounded-3xl bg-transparent max-h-[100dvh] text-center"
         >
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_50%,rgba(255,255,255,0.1),transparent)]" />
-          <div className="relative z-10">
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-primary-foreground mb-4">
-              Ready to simplify your money?
-            </h2>
-            <p className="text-primary-foreground/80 text-lg max-w-lg mx-auto mb-8">
-              Join thousands already on the waitlist. Be first to experience money with culture, structure, and future.
-            </p>
-            <Button
-              size="lg"
-              variant="secondary"
-              className="gap-2 text-base font-semibold"
-            >
-              Join the Waitlist <ArrowRight size={18} />
-            </Button>
+          <DottedSurface className="absolute inset-0 z-0 scale-100 -translate-y-32 -translate-x-16" />
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_80%_50%,rgba(255,255,255,0.1),transparent)]" />
+          <div className="relative z-10 flex flex-col items-center justify-center p-10 md:p-16">
+            <div className="relative flex flex-col items-center justify-center">
+              <div className="relative z-10">
+                <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-muted-foreground mb-4">
+                  Ready to simplify your money?
+                </h2>
+                <p className="text-muted-foreground/80 text-lg max-w-lg mx-auto mb-8">
+                  Join thousands already on the waitlist. Be first to experience money with culture, structure, and future.
+                </p>
+                <Button
+                  size="lg"
+                  variant="outline"
+                  className="gap-2 text-base font-semibold"
+                >
+                  Join the Waitlist <ArrowRight size={18} />
+                </Button>
+              </div>
+            </div>
           </div>
         </motion.div>
       </div>
